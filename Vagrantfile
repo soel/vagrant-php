@@ -5,9 +5,9 @@ config.vm.box_url = "https://github.com/2creatives/vagrant-centos/" +
   config.vm.provider :virtualbox do |vb|
     vb.customize [ 'modifyvm', :id, '--memory', 1024 ]
   end
-  config.vm.network "forwarded_port", guest: 3000, host: 6000
+  config.vm.network "forwarded_port", guest: 80, host: 8080
 
-  config.vm.provision :shell, inline: "yum -y update"
+  #config.vm.provision :shell, inline: "yum -y update"
   config.vm.provision :shell, inline: "yum -y install php php-cli php-common php-gd php-in tl php-mbstring php-mysql php-pdo httpd"
 
 end
